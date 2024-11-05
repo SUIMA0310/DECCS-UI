@@ -1,0 +1,22 @@
+{
+    "name": "React Vite Cloudflare Dev Container",
+    "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:16",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "16"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "eamodio.gitlens",
+                "ms-vscode.vscode-typescript-tslint-plugin"
+            ]
+        }
+    },
+    "postCreateCommand": "npm install -g create-vite && npm create vite@latest my-app --template react && cd my-app && npm install && npm install -D wrangler",
+    "forwardPorts": [5173],
+    "remoteUser": "node"
+}
